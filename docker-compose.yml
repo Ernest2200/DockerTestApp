@@ -1,0 +1,21 @@
+version: '3.1'
+
+services:
+    app:
+        image: ernest2200/dockertestapp
+    ports:
+      - 3000:3000
+    volumes:
+      - /opt/wordpress:/var/www/html/wp-content
+
+  db:
+    container_name: servidor_mysql
+    image: mysql
+    restart: always
+    environment:
+      MYSQL_DATABASE: bd_wp
+      MYSQL_USER: user_wp
+      MYSQL_PASSWORD: asdasd
+      MYSQL_ROOT_PASSWORD: asdasd
+    volumes:
+      - /opt/mysql_wp:/var/lib/mysql
