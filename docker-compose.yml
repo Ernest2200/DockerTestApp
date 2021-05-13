@@ -5,8 +5,6 @@ services:
         image: ernest2200/dockertestapp
     ports:
       - 3000:3000
-    volumes:
-      - /opt/wordpress:/var/www/html/wp-content
 
   db:
     container_name: servidor_mysql
@@ -19,3 +17,6 @@ services:
       MYSQL_ROOT_PASSWORD: asdasd
     volumes:
       - /opt/mysql_wp:/var/lib/mysql
+      
+      
+      
